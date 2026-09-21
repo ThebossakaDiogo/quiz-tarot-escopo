@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Atendimento com Taróloga Milena | Templo da Luz Amorosa</title>
+    <meta name="description" content="Canal oficial de atendimento direto e acolhimento espiritual com a taróloga Milena Medeiros.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://templodeluz.com/canal-oficial-contato-atendimento-c31">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb5hBydNyWz5LBDASTZXtRFuHVCN8UhPW30h5rrhn8P9m4YXk350UcmstGo3Vg56bTcOH2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #d9dbd5;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            background: #efeae2 url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #075E54;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            padding-top: max(15px, env(safe-area-inset-top));
+            z-index: 10;
+        }
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url('../images/medium-milena.webp');
+            background-size: cover;
+            background-position: center;
+            margin-right: 15px;
+        }
+        .contact-info { flex-grow: 1; }
+        .contact-name { font-size: 16px; font-weight: bold; }
+        .contact-status { font-size: 13px; color: rgba(255,255,255,0.8); }
+        .chat-window {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+        .message {
+            max-width: 85%;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.4;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+        .message.received {
+            align-self: flex-start;
+            background-color: #ffffff;
+            border-top-left-radius: 0;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        }
+        .message.sent {
+            align-self: flex-end;
+            background-color: #dcf8c6;
+            border-top-right-radius: 0;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        }
+        .time { font-size: 11px; color: #999; float: right; margin-top: 4px; margin-left: 8px; }
+        .input-area {
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .input-box {
+            flex-grow: 1;
+            background: white;
+            border-radius: 20px;
+            padding: 12px 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        .send-btn {
+            background-color: #007a60;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            cursor: pointer;
+            border: none;
+            font-size: 18px;
+        }
+        
+        .typing-bubble { 
+            display: none; 
+            align-items: center; 
+            background-color: white; 
+            padding: 12px 16px; 
+            border-radius: 8px; 
+            border-top-left-radius: 0; 
+            width: fit-content; 
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
+            margin: 0 20px 10px 20px; 
+        }
+        .typing-dot { 
+            width: 7px; height: 7px; background-color: #8696a0; border-radius: 50%; margin: 0 3px; 
+            animation: typing-bounce 1.4s infinite ease-in-out both; 
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing-bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+            align-self: flex-end;
+            width: 100%;
+            align-items: flex-end;
+        }
+        .chat-btn {
+            background-color: #007a60;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            padding-top: max(15px, env(safe-area-inset-top));
+            border-radius: 20px;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            transition: background 0.2s;
+        }
+        .chat-btn:active { background-color: #005a46; }
+        .chat-btn.secondary { background-color: #ffffff; color: #007a60; border: 1px solid #007a60; }
+        
+        /* Molde invisível da leitura amorosa no formato estrito A4 */
+        #paper-template {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+            width: 794px;
+            min-height: 1123px; /* Garante pelo menos uma folha A4, mas cresce se precisar */
+            overflow: visible; /* Deixa o texto empurrar a folha pra baixo */
+            box-sizing: border-box;
+            background-color: #fdfaf2;
+            padding: 60px 50px; /* Mais espaço útil */
+            font-family: 'Caveat', cursive;
+            font-size: 24px; /* Reduzido de 32px para caber a carta toda */
+            color: #1a1a1a;
+            line-height: 1.5;
+            background-image: repeating-linear-gradient(transparent, transparent 36px, rgba(0,0,0,0.05) 37px);
+            background-position: 0 16px;
+        }
+
+        /* Modal para a Foto da Carta */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 70vh;
+            border-radius: 4px;
+        }
+        .modal-btns {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .modal-btn {
+            padding: 12px 20px;
+            background: #007a60;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .modal-btn.secondary { background: #444; }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="header">
+        <div class="profile-pic"></div>
+        <div class="contact-info">
+            <div class="contact-name">Milena Medeiros</div>
+            <div class="contact-status">online</div>
+        </div>
+    </div>
+
+    <div class="chat-window" id="chat-window"></div>
+        <div class="typing-bubble" id="typing-indicator">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+    </div>
+    
+    <div class="input-area" id="input-area">
+        <input type="text" class="input-box" id="message-input" aria-label="Digite sua resposta" placeholder="Aguarde..." disabled onkeypress="handleKeyPress(event)">
+        <button class="send-btn" id="send-btn" disabled onclick="sendMessage()">➤</button>
+    </div>
+</div>
+
+<div id="paper-template">
+    <div id="paper-content"></div>
+</div>
+
+<div class="modal" id="image-modal">
+    <button type="button" class="close-modal" onclick="closeModal()" aria-label="Fechar" style="background:transparent;border:none;">×</button>
+    <img id="modal-img" src="" alt="Carta" style="max-height: 80vh; max-width: 90vw; border-radius: 8px;">
+    <div style="display: flex; gap: 15px; margin-top: 15px;">
+        <button onclick="downloadImg()" style="background-color: #007a60; border: none; padding: 12px 20px; color: white; border-radius: 8px; font-weight: bold; cursor: pointer;">⬇ Baixar Imagem</button>
+        <button onclick="printImg()" style="background-color: #005A9C; border: none; padding: 12px 20px; color: white; border-radius: 8px; font-weight: bold; cursor: pointer;">🖨 Imprimir Carta</button>
+    </div>
+</div>
+<script>
+
+
+
+
+    const chatWindow = document.getElementById('chat-window');
+    const messageInput = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+    const typingIndicator = document.getElementById('typing-indicator');
+    const inputArea = document.getElementById('input-area');
+
+    let step = 0;
+    let isBotTyping = false;
+    let letterContent = "";
+    
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlSession = urlParams.get('session') || '';
+    let deliverableSessionId = urlSession || localStorage.getItem('templo_entregavel_session_id');
+    if (!deliverableSessionId) {
+        let randId = '000000';
+        if (typeof crypto !== 'undefined') {
+            if (crypto.randomUUID) {
+                randId = crypto.randomUUID().slice(0, 8);
+            } else if (crypto.getRandomValues) {
+                const arr = new Uint32Array(1);
+                crypto.getRandomValues(arr);
+                randId = arr[0].toString(36);
+            }
+        }
+        deliverableSessionId = 'entregavel_' + Date.now() + '_' + randId;
+        localStorage.setItem('templo_entregavel_session_id', deliverableSessionId);
+    }
+    
+    let userData = {
+        nome: '', afastamento: '', ente: '', parentesco: '', mensagem: '',
+        perguntas: [], respostas: [], oraculo_amor: '', oraculo_financas: '', oraculo_familia: '', email: '', phone: '', sessionId: deliverableSessionId,
+        deliverTime: 0, packageAmount: 35
+    };
+
+    function initUserDataFromStorage() {
+        try {
+            const quiz = JSON.parse(localStorage.getItem('templodeluz_quiz_state') || '{}');
+            if (quiz.nome && (!userData.nome || userData.nome === 'Cliente')) userData.nome = quiz.nome.trim();
+            if ((quiz.ente || quiz.amado) && !userData.ente) userData.ente = (quiz.ente || quiz.amado).trim();
+            if ((quiz.afastamento || quiz.situacao) && !userData.afastamento) userData.afastamento = (quiz.afastamento || quiz.situacao).trim();
+            if ((quiz.phone || quiz.telefone) && !userData.phone) userData.phone = (quiz.phone || quiz.telefone).trim();
+            if (quiz.email && !userData.email) userData.email = quiz.email.trim();
+        } catch (error_) { /* ignore localStorage parse error */ }
+    }
+    initUserDataFromStorage();
+
+    function packageFromAmount(amount) {
+        amount = Number(amount || 35);
+        if (amount >= 59.99) return { amount: 60, questions: 20, days: 90, amarracao: true, mao: true, title: 'Pacote Sagrado VIP - Tudo Incluso' };
+        if (amount >= 54.99) return { amount: 55, questions: 10, days: 60, amarracao: true, mao: true, rival: true, title: 'Leitura Completa com Terceira Pessoa' };
+        if (amount >= 44.99) return { amount: 45, questions: 7, days: 30, amarracao: true, mao: true, title: 'Amarração Amorosa com Leitura da Mão' };
+        if (amount >= 34.99) return { amount: 35, questions: 5, days: 30, amarracao: true, title: 'Amarração Amorosa com 5 Respostas' };
+        if (amount >= 24.99) return { amount: 25, questions: 5, days: 30, amarracao: false, title: 'Leitura Amorosa com Oráculo' };
+        return { amount: 15, questions: 3, days: 0, amarracao: false, title: 'Leitura Amorosa Essencial' };
+    }
+
+    function applyPackage(amount) {
+        const info = packageFromAmount(amount);
+        userData.packageAmount = info.amount;
+        userData.packageTitle = info.title;
+        userData.questionLimit = info.questions;
+        userData.oraculoDays = info.days;
+        userData.hasAmarracao = info.amarracao;
+        userData.hasVideochamada = !!info.videochamada;
+        userData.sessions = info.sessions || 1;
+        return info;
+    }
+
+    async function hydratePackageFromPurchase() {
+        let amount = 20;
+        try {
+            const saved = JSON.parse(localStorage.getItem('templo_luz_pacote_pago') || '{}');
+            if (saved.amount) amount = saved.amount;
+        } catch (error_) { /* ignore */ }
+        const urlAmount = Number(urlParams.get('amount') || urlParams.get('valor'));
+        if (urlAmount && !isNaN(urlAmount)) amount = urlAmount;
+        return applyPackage(amount);
+    }
+
+    const LEGACY_CACHE_KEY = 'temploLuz_chat2_cache';
+    const CACHE_KEY = `temploLuz_chat2_cache_${deliverableSessionId}`;
+    const CACHE_BACKUP_KEY = `${CACHE_KEY}_backup`;
+
+    async function checkPurchased(hash) {
+        return false;
+    }
+
+    
+    async function awaitPurchaseOrTimeout(hash, onSuccess, onSkip, linkUrl) {
+        await typeMessage("Opa, recebi a confirmação do seu pedido! Vamos seguir em frente. 🙏");
+        onSuccess();
+    }
+
+    function saveReducedCache() {
+        try {
+            const safeState = {
+                step: step, userData: userData, letterContent: letterContent,
+                html: chatWindow.innerHTML.replace(/<img[^>]*src=["']data:image[^"']*["'][^>]*>/gi, '<div class="message received">Sua leitura foi gerada. Se ela não aparecer aqui, toque em imprimir/baixar quando a conversa continuar. <span class="time">' + getTime() + '</span></div>'),
+                time: Date.now()
+            };
+            localStorage.setItem(CACHE_KEY, JSON.stringify(safeState));
+        } catch (error_) {
+            console.warn('Falha ao salvar cache reduzido secundário:', error_);
+        }
+    }
+
+    function saveCache() {
+        try {
+            const state = {
+                step: step, userData: userData, letterContent: letterContent,
+                html: chatWindow.innerHTML, time: Date.now()
+            };
+            const serialized = JSON.stringify(state);
+            localStorage.setItem(CACHE_BACKUP_KEY, serialized);
+            localStorage.setItem(CACHE_KEY, serialized);
+        } catch (error_) {
+            console.warn('Cache primário excedido, salvando versão segura reduzida:', error_);
+            saveReducedCache();
+        }
+    }
+
+    function getSavedCacheRaw() {
+        const cached = localStorage.getItem(CACHE_KEY) || localStorage.getItem(CACHE_BACKUP_KEY);
+        if (cached) return cached;
+        const legacy = localStorage.getItem(LEGACY_CACHE_KEY);
+        if (!legacy) return null;
+        try {
+            const legacyState = JSON.parse(legacy);
+            if (legacyState.userData?.sessionId === deliverableSessionId) {
+                return legacy;
+            }
+        } catch (error_) { /* ignore legacy cache error */ }
+        return null;
+    }
+
+    function restoreInputState(currentStep) {
+        const inputPrompts = {
+            1: "Sua resposta...",
+            15: "Sua resposta...",
+            2: "Seu nome...",
+            3: "Situação de vocês...",
+            4: "Nome da pessoa amada...",
+            5: "Relação atual...",
+            6: "Sua pergunta...",
+            9: "Sua resposta...",
+            10: "Sua resposta...",
+            11: "Sua resposta..."
+        };
+        const resumeActions = {
+            7: startLetterTimer,
+            100: resumeExpress,
+            110: resumeExpress2,
+            101: resumeUpsell1,
+            111: resumeUpsell1_2,
+            102: resumeUpsell2,
+            112: resumeUpsell2_2,
+            104: resumeNovaCarta,
+            114: resumeNovaCarta2,
+            103: resumeFinalDonation
+        };
+
+        if (currentStep === 8) {
+            enableInput("Sua mensagem para " + userData.ente + "...");
+            return;
+        }
+        if (inputPrompts[currentStep]) {
+            enableInput(inputPrompts[currentStep]);
+            return;
+        }
+        inputArea.style.display = 'none';
+        if (resumeActions[currentStep]) {
+            resumeActions[currentStep]();
+        }
+    }
+
+    function loadCache() {
+        const cached = getSavedCacheRaw();
+        if (!cached) return false;
+        
+        try {
+            const state = JSON.parse(cached);
+            if ((Date.now() - state.time) / (1000 * 60 * 60) > 87600) {
+                localStorage.removeItem(CACHE_KEY);
+                localStorage.removeItem(CACHE_BACKUP_KEY);
+                return false;
+            }
+            if (state.userData?.sessionId && state.userData.sessionId !== deliverableSessionId) {
+                return false;
+            }
+            
+            step = state.step;
+            userData = { ...userData, ...state.userData, sessionId: deliverableSessionId };
+            letterContent = state.letterContent || "";
+            chatWindow.innerHTML = state.html || "";
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+            
+            const btns = chatWindow.querySelectorAll('.chat-btn');
+            btns.forEach(btn => btn.style.display = 'none');
+            
+            restoreInputState(step);
+            return true;
+        } catch (error_) {
+            console.warn('Falha ao carregar estado do cache:', error_);
+            return false;
+        }
+    }
+
+    function getTime() {
+        const now = new Date();
+        return now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+    }
+
+    function addMessage(text, type) {
+        let formatted = text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\*(.*?)\*/g, '<i>$1</i>');
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${type}`;
+        msgDiv.innerHTML = `${formatted} <span class="time">${getTime()}</span>`;
+        chatWindow.appendChild(msgDiv);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+        saveCache();
+    }
+    
+    function addImageMessage(dataUrl) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message received`;
+        
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        img.style.width = '100%';
+        img.style.borderRadius = '8px';
+        img.style.cursor = 'pointer';
+        img.onclick = () => openModal(dataUrl);
+        
+        msgDiv.appendChild(img);
+        
+        const timeSpan = document.createElement('span');
+        timeSpan.className = 'time';
+        timeSpan.innerText = getTime();
+        msgDiv.appendChild(timeSpan);
+        
+        chatWindow.appendChild(msgDiv);
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+        saveCache();
+    }
+
+    // Modal
+    function openModal(src) { document.getElementById('modal-img').src = src; document.getElementById('image-modal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('image-modal').style.display = 'none'; }
+    function downloadImg() {
+        const a = document.createElement('a'); a.href = document.getElementById('modal-img').src;
+        a.download = 'minha_leitura_amorosa.jpg'; document.body.appendChild(a); a.click(); a.remove();
+    }
+    function printImg() {
+        const win = window.open(''); win.document.write('<img src="' + document.getElementById('modal-img').src + '" style="width:100%;">');
+        win.print(); win.close();
+    }
+
+    function showTyping() { typingIndicator.style.display = 'flex'; chatWindow.scrollTop = chatWindow.scrollHeight; }
+    function hideTyping() { typingIndicator.style.display = 'none'; }
+    function disableInput() { messageInput.disabled = true; sendBtn.disabled = true; messageInput.placeholder = "Aguarde..."; }
+    function enableInput(placeholder = "Mensagem...") {
+        inputArea.style.display = 'flex'; // Garante que a barra reapareça!
+        messageInput.disabled = false; sendBtn.disabled = false; messageInput.placeholder = placeholder;
+        setTimeout(() => messageInput.focus(), 100); 
+    }
+
+    async function typeMessage(content, overrideDelay = null) {
+        showTyping();
+        let textLen = content.replace(/<[^>]*>?/gm, '').length;
+        let calcDelay = textLen * 45;
+        if (calcDelay < 1500) calcDelay = 1500;
+        if (calcDelay > 5000) calcDelay = 5000;
+        let finalDelay = overrideDelay !== null ? overrideDelay : calcDelay;
+
+        return new Promise(resolve => {
+            setTimeout(() => {
+                hideTyping(); addMessage(content, 'received'); resolve();
+            }, finalDelay);
+        });
+    }
+
+    function showButtons(options) {
+        return new Promise(resolve => {
+            const btnGroup = document.createElement('div');
+            btnGroup.className = 'btn-group';
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = `chat-btn ${opt.type || ''}`;
+                btn.innerText = opt.label;
+                btn.onclick = () => {
+                    btnGroup.remove(); addMessage(opt.label, 'sent'); resolve(opt.value);
+                };
+                btnGroup.appendChild(btn);
+            });
+            chatWindow.appendChild(btnGroup); chatWindow.scrollTop = chatWindow.scrollHeight; saveCache();
+        });
+    }
+
+    async function fetchLetter() {
+        const nome = userData.nome || 'Consulente';
+        const ente = userData.ente || 'sua pessoa amada';
+        return `Meus caminhos e preces se uniram ao plano maior para trazer clareza à sua caminhada, ${nome}.
+Ao abrir as cartas sagradas para a conexão entre você e ${ente}, sinto uma forte vibração de sentimentos que ainda permanecem vivos, apesar das tempestades e do afastamento recente.
+Houve momentos de orgulho e ruídos de comunicação que criaram nós espirituais, mas a energia do perdão e da reconciliação está presente no seu horizonte.
+Mantenha a fé, preserve a serenidade e confie nos sinais: uma luz de esperança se acende para que vocês possam encontrar a paz e o reencontro merecido.`;
+    }
+
+    async function fetchOraculo() {
+        const ente = userData.ente || 'a pessoa amada';
+        return `Nos próximos 90 dias, a revelação do oráculo aponta para uma fase de grande movimentação e despertar no coração de ${ente}.
+Aproximações sutis, sonhos recorrentes e lembranças do vínculo construído começarão a falar mais alto que o orgulho.
+O portal astral estará favorável a conversas sinceras e à cura de feridas do passado. Caminhe com o coração leve e aberto para receber o melhor.`;
+    }
+
+    async function generateHandwrittenImage(text) {
+        const pC = document.getElementById('paper-content'); const pT = document.getElementById('paper-template');
+        pC.innerHTML = text.replaceAll('\n', '<br>');
+        const canvas = await html2canvas(pT, { scale: 1 });
+        return canvas.toDataURL("image/jpeg", 0.9);
+    }
+
+    function startLetterTimer() {
+        if (!letterContent || letterContent === "") {
+            fetchLetter().then(res => { letterContent = res; saveCache(); });
+        }
+        
+        let timerEl = document.getElementById('live-timer');
+        if (!timerEl) {
+            addMessage(`⏳ Sua leitura amorosa está sendo aberta nas cartas...<br><br>Tempo estimado para finalizar: <strong id="live-timer">--:--</strong>`, 'received');
+            timerEl = document.getElementById('live-timer');
+        }
+
+        const interval = setInterval(async () => {
+            let remain = userData.deliverTime - Date.now();
+            
+            if (remain <= 0) {
+                clearInterval(interval);
+                if ("Notification" in window && Notification.permission === "granted") {
+                    new Notification("Templo da Luz", { body: "Sua leitura está pronta! Volte para a tela para ler." });
+                }
+            
+                clearInterval(interval);
+                if (timerEl) timerEl.innerText = "Pronto!";
+                step = 8; 
+                saveCache();
+                deliverLetter();
+            } else {
+                let fakeRemain = remain;
+                  if (userData.fakedTimer) fakeRemain += (userData.fakedTimer * 60000);
+                  let m = Math.floor(fakeRemain / 60000);
+                  let s = Math.floor((fakeRemain % 60000) / 1000);
+                if (timerEl) timerEl.innerText = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+            }
+        }, 1000);
+    }
+
+    let chatPixPollers = {};
+
+    window.copyChatPix = function(txId, code) {
+        if (navigator.clipboard?.writeText) {
+            navigator.clipboard.writeText(code);
+        } else {
+            var raw = document.getElementById('pix-raw-' + txId);
+            if (raw) { raw.select(); document.execCommand('copy'); }
+        }
+        var btn = document.getElementById('copy-btn-' + txId);
+        if (btn) {
+            btn.innerHTML = '✓ CÓDIGO PIX COPIADO COM SUCESSO!';
+            btn.style.background = '#065f46';
+            setTimeout(function() {
+                var currentBtn = document.getElementById('copy-btn-' + txId);
+                if (currentBtn) {
+                    currentBtn.innerHTML = '📋 Copiar Código PIX Copia e Cola';
+                    currentBtn.style.background = 'linear-gradient(90deg, #10b981, #059669)';
+                }
+            }, 3000);
+        }
+    };
+
+    async function handlePaymentSuccess(txId, amount, purpose) {
+        var statusBox = document.getElementById('status-box-' + txId);
+        if (statusBox) {
+            statusBox.style.background = '#10b981';
+            statusBox.style.color = '#ffffff';
+            statusBox.style.borderColor = '#059669';
+            statusBox.innerHTML = '<strong>✓ PAGAMENTO CONFIRMADO COM SUCESSO!</strong>';
+        }
+
+        await typeMessage(`✨ **Pagamento de R$ ${amount.toFixed(2).replace('.', ',')} confirmado com sucesso!**`);
+        await typeMessage(`Muito obrigada, ${userData.nome || 'meu bem'}! Que as bênçãos do plano espiritual se derramem sobre a sua história. A energia foi liberada imediatamente. 🙏`);
+
+        if (purpose === 'oraculo' || purpose === 'oraculo_90' || purpose === 'oraculo_30') {
+            userData.oraculoDays = (amount >= 30 ? 90 : 30);
+            await typeMessage("Maravilha! Vamos abrir o seu oráculo sagrado agora.");
+            await typeMessage("Para eu sintonizar com precisão: qual é a principal dúvida que aperta seu peito sobre o futuro de vocês dois?", 3500);
+            step = 9; enableInput("Sua resposta..."); saveCache(); isBotTyping = false;
+            return;
+        }
+        if (purpose === 'respostas_extra') {
+            userData.questionLimit = (userData.questionLimit || 5) + (amount >= 30 ? 5 : 3);
+            await typeMessage("Você liberou respostas adicionais com as cartas! Me envie a sua próxima pergunta amorosa:");
+            step = 20; enableInput("Digite sua pergunta extra..."); saveCache(); isBotTyping = false;
+            return;
+        }
+        if (purpose === 'amarracao') {
+            userData.hasAmarracao = true;
+            await typeMessage("Recebi a sua firmeza de amarração amorosa de 3 a 7 dias.");
+            await typeMessage("Aqui estão os **3 passos sagrados** para você iniciar hoje com serenidade:\n\n1. **Limpeza do medo:** antes de adormecer, respire fundo 7 vezes, soltando mágoas e ansiedades.\n2. **Chamada do pensamento:** visualize o rosto do(a) " + userData.ente + " com calma e chame o nome 3 vezes com carinho.\n3. **Firmeza:** por 7 dias mantenha o silêncio de cobranças. A espiritualidade precisa de tranquilidade para unir os caminhos.");
+            isBotTyping = false;
+            return;
+        }
+        if (purpose === 'doacao') {
+            await typeMessage("Sua contribuição de luz foi recebida com profunda gratidão em nosso Templo. Que os anjos iluminem seus passos no amor e na vida! Fique na paz e na luz divina. ✨🕊️");
+            isBotTyping = false;
+            inputArea.style.display = 'none';
+            return;
+        }
+        await typeMessage("Sua liberação está confirmada! Vamos prosseguir com sua orientação.");
+        isBotTyping = false;
+    }
+
+    function watchChatPayment(pix, amount, purpose) {
+        var txId = pix.transaction_id || pix.external_id;
+        if (chatPixPollers[txId]) clearInterval(chatPixPollers[txId]);
+
+        var expiresSeconds = 15 * 60;
+        var timerElem = document.getElementById('pix-timer-' + txId);
+        var timerInterval = setInterval(function() {
+            expiresSeconds--;
+            if (expiresSeconds <= 0) {
+                clearInterval(timerInterval);
+                if (timerElem) timerElem.textContent = 'Expirado';
+            } else if (timerElem) {
+                var m = Math.floor(expiresSeconds / 60);
+                var s = expiresSeconds % 60;
+                timerElem.textContent = '⏳ ' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+            }
+        }, 1000);
+
+        var txId = pix.transaction_id || pix.external_id;
+        if (chatPixPollers[txId]) clearInterval(chatPixPollers[txId]);
+
+        var expiresSeconds = 15 * 60;
+        var timerElem = document.getElementById('pix-timer-' + txId);
+        var timerInterval = setInterval(function() {
+            expiresSeconds--;
+            if (expiresSeconds <= 0) {
+                clearInterval(timerInterval);
+                if (timerElem) timerElem.textContent = 'Expirado';
+            } else if (timerElem) {
+                var m = Math.floor(expiresSeconds / 60);
+                var s = expiresSeconds % 60;
+                timerElem.textContent = '⏳ ' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+            }
+        }, 1000);
+    }
+
+    function pixButton(amount, label, color, eventName, purpose = 'extra') {
+        return `<button type="button" onclick="createChatPix(${amount}, '${eventName}', '${purpose}')" style="display: block; width: 100%; border: none; background-color: ${color}; color: white; text-align: center; padding: 14px 16px; border-radius: 14px; text-decoration: none; font-weight: 800; font-size: 13.5px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); cursor: pointer; transition: transform 0.15s ease;">${label}</button>`;
+    }
+
+    window.createChatPix = async function(amount, eventName, purpose = 'extra') {
+        disableInput();
+        await typeMessage(`Estou gerando o PIX demonstrativo de **R$ ${amount.toFixed(2).replace('.', ',')}** dentro do atendimento. Um instante...`);
+
+        const packageOverride = {
+            amount: amount,
+            title: packageFromAmount(amount).title,
+            questions: packageFromAmount(amount).questions,
+            oraculo_days: packageFromAmount(amount).days,
+            has_amarracao: packageFromAmount(amount).amarracao,
+            has_videochamada: packageFromAmount(amount).videochamada || false,
+            sessions: packageFromAmount(amount).sessions || 1,
+            description: packageFromAmount(amount).title
+        };
+
+        const txId = 'pix_demo_' + Date.now();
+        const mockPayload = '00020126580014br.gov.bcb.pix0136123e4567-e89b-12d3-a456-426614174000520400005303986540' + amount.toFixed(2) + '5802BR5913TEMPLO DA LUZ6009SAO PAULO62070503***6304DEMO';
+        const data = {
+            ok: true,
+            transaction_id: txId,
+            external_id: txId,
+            pix_payload: mockPayload
+        };
+
+        const cardHtml = `
+        <div style="background:#ffffff; border:2px solid #10b981; border-radius:18px; padding:14px; margin:6px 0; box-shadow:0 8px 24px rgba(16,185,129,0.18); text-align:left;">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e5e7eb; padding-bottom:8px; margin-bottom:10px;">
+                <div>
+                    <span style="display:inline-block; background:#ecfdf5; color:#065f46; font-size:10px; font-weight:800; padding:3px 8px; border-radius:99px; border:1px solid #a7f3d0;">🛡️ PIX DEMONSTRATIVO</span>
+                    <div style="font-size:13px; font-weight:800; color:#111827; margin-top:4px;">Liberação de R$ ${amount.toFixed(2).replace('.', ',')}</div>
+                </div>
+                <div id="pix-timer-${txId}" style="background:#fef3c7; border:1px solid #fde68a; color:#92400e; font-size:11px; font-weight:800; padding:3px 8px; border-radius:99px;">
+                    ⏳ 15:00
+                </div>
+            </div>
+
+            <div style="text-align:center; background:#f9fafb; padding:10px; border-radius:12px; border:1px solid #e5e7eb;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=210x210&data=${encodeURIComponent(data.pix_payload)}" alt="QR Code PIX" style="width:180px; height:180px; display:block; margin:0 auto; border-radius:8px; background:#fff; padding:6px; border:1px solid #e5e7eb;">
+                <p style="font-size:10px; color:#6b7280; font-weight:700; text-transform:uppercase; margin-top:6px;">Demonstração visual do QR Code</p>
+            </div>
+
+            <button type="button" onclick="copyChatPix('${txId}', '${data.pix_payload}')" id="copy-btn-${txId}" style="width:100%; margin-top:10px; background:linear-gradient(90deg, #10b981, #059669); color:#fff; font-size:12px; font-weight:800; text-transform:uppercase; padding:13px; border:none; border-radius:12px; cursor:pointer; box-shadow:0 4px 12px rgba(16,185,129,0.25); display:flex; align-items:center; justify-content:center; gap:6px;">
+                📋 Copiar Código PIX Copia e Cola
+            </button>
+
+            <textarea id="pix-raw-${txId}" readonly onclick="this.select()" style="width:100%; height:55px; margin-top:8px; border:1px solid #d1d5db; border-radius:8px; padding:6px; font-size:10px; font-family:monospace; color:#4b5563; box-sizing:border-box;">${data.pix_payload}</textarea>
+
+            <button type="button" onclick="handlePaymentSuccess('${txId}', ${amount}, '${purpose}')" style="margin-top:10px; background:#dbeafe; border:1px solid #93c5fd; color:#1d4ed8; border-radius:12px; padding:10px; font-size:12px; font-weight:800; width:100%; cursor:pointer;">
+                ⚡ Simular Confirmação do Pagamento (Visual)
+            </button>
+        </div>`;
+
+        await typeMessage(cardHtml, 800);
+        watchChatPayment(data, amount, purpose);
+
+        } catch (error_) {
+            console.warn('Erro ao gerar PIX:', error_);
+            await typeMessage("Não consegui gerar o PIX agora. Por favor, tente novamente em alguns segundos.");
+        }
+    };
+
+    async function resumeExpress() {
+        userData.deliverTime = Date.now() + (30 * 1000);
+        step = 7; saveCache(); startLetterTimer(); isBotTyping = false;
+    }
+
+    async function resumeExpress2() {
+        userData.deliverTime = Date.now() + (30 * 1000);
+        step = 7; saveCache(); startLetterTimer(); isBotTyping = false;
+    }
+
+    async function resumeUpsell1() {
+        await typeMessage("Que ótimo! O que você quer dizer para o(a) " + (userData.ente || "seu amor") + " agora?");
+        step = 8; enableInput("Sua mensagem..."); saveCache(); isBotTyping = false;
+    }
+
+    async function resumeUpsell1_2() {
+        await typeMessage("O que você deseja transmitir ao coração do(a) " + (userData.ente || "seu amor") + "?");
+        step = 8; enableInput("Sua mensagem..."); saveCache(); isBotTyping = false;
+    }
+
+    async function resumeUpsell2() {
+        await typeMessage("Maravilha! Vamos sintonizar com o seu oráculo amoroso dos próximos dias.");
+        step = 9; enableInput("Sua resposta..."); saveCache(); isBotTyping = false;
+    }
+
+    async function resumeUpsell2_2() {
+        await typeMessage("Maravilha! Vamos sintonizar com o seu oráculo amoroso dos próximos dias.");
+        step = 9; enableInput("Sua resposta..."); saveCache(); isBotTyping = false;
+    }
+
+    async function deliverLetter() {
+        isBotTyping = true;
+        await typeMessage("Minha querida / Meu querido, concentrei toda a minha intuição e puxei a lâmina central para o amor de vocês no altar.");
+        await typeMessage("As cartas foram muito claras e profundas. Leia com o coração aberto:");
+        
+        if (!letterContent) letterContent = await fetchLetter();
+        
+        await typeMessage(letterContent, 1000);
+        await typeMessage("Também consagrei uma representação visual manuscrita dessa leitura para que você guarde essa mensagem de luz no seu celular.");
+        
+        showTyping();
+        const imgData = await generateHandwrittenImage(letterContent);
+        hideTyping();
+        addImageMessage(imgData);
+        saveCache();
+
+        const pkg = packageFromAmount(userData.packageAmount);
+        trackBlindAnalytics('10_entrega_leitura_cartas');
+        if (pkg.days > 0) {
+            await typeMessage("Agora vamos abrir o seu oráculo sagrado dos próximos " + pkg.days + " dias.");
+            await typeMessage("Me diga em uma frase sincera: qual é a maior insegurança que você sente hoje em relação a vocês dois?");
+            step = 9; enableInput("Sua maior insegurança..."); saveCache(); isBotTyping = false; return;
+        }
+        await typeMessage("Sua leitura amorosa principal foi entregue com muito carinho. Fique com o coração atento aos sinais nos próximos dias.");
+        await miniPixOffers();
+    }
+
+    async function novaCartaPitch() {
+        await typeMessage(`A espiritualidade aqui continua muito viva ao seu redor, ${userData.nome || 'meu bem'}...`);
+        await typeMessage(`Se você sente que ainda ficou alguma dúvida em aberto sobre ${userData.ente || 'essa relação'}, posso abrir uma tiragem complementar neste momento.`);
+        
+        trackBlindAnalytics('12_pitch_nova_carta');
+        const choice = await showButtons([
+            { label: "Quero 5 respostas + Oráculo (R$30)", value: "trinta" },
+            { label: "Prefiro 3 respostas diretas (R$20)", value: "vinte", type: "secondary" },
+            { label: "Agora estou em paz, obrigado(a)", value: "nao", type: "secondary" }
+        ]);
+        
+        if (choice === 'trinta') {
+            await typeMessage("Excelente escolha! O pacote de R$30 libera 5 respostas e abre o oráculo amoroso dos próximos 30 dias.");
+            await typeMessage(pixButton(30, "🔮 Ativar 5 Respostas + Oráculo por R$30", "#00a884", "13_btn_extra_30", "oraculo_30"), 1000);
+        } else if (choice === 'vinte') {
+            await typeMessage("Perfeito! O de R$20 libera 3 respostas diretas das cartas para esclarecer o que mais te aflige.");
+            await typeMessage(pixButton(20, "🔮 Ativar 3 Respostas por R$20", "#005A9C", "13_btn_extra_20", "respostas_extra"), 1000);
+        } else {
+            await oraculumPitch();
+        }
+    }
+
+    async function resumeNovaCarta() {
+        await oraculumPitch();
+    }
+
+    async function resumeNovaCarta2() {
+        await oraculumPitch();
+    }
+
+    async function oraculumPitch() {
+        let hasOraculo = await checkPurchased("ffa8pwx_1064318");
+        if (hasOraculo) {
+            await typeMessage("Vi que você tem direito à Leitura Espiritual de 90 dias que você adquiriu!");
+            await typeMessage("Para eu sintonizar com a sua energia amorosa, qual o nome da sua amada (ou amado), vocês já têm relacionamento? A quanto tempo?", 4000);
+            step = 9; enableInput("Sua resposta..."); saveCache(); isBotTyping = false; return;
+        }
+
+        trackBlindAnalytics('14_pitch_oraculo');
+        await typeMessage("✨ Quero te convidar para uma conexão ainda mais profunda: o *Oráculo Espiritual dos seus Próximos 90 Dias*. 🔮", 3000);
+        await typeMessage("Nesse oráculo, olhamos os caminhos à sua frente para revelar as tendências e avisos espirituais em:\n\n❤️ Sentimentos e reaproximação no Amor\n✨ Decisões importantes e novos rumos\n🏡 Harmonia pessoal e bem-estar\n⚠️ Alertas do que você deve evitar", 4000);
+        await typeMessage("Você gostaria de abrir o Oráculo dos seus 90 dias agora comigo?");
+        
+        const choice2 = await showButtons([
+            { label: "Sim, quero meu Oráculo 🔮", value: "sim" },
+            { label: "Não, agradeço", value: "nao", type: "secondary" }
+        ]);
+        
+        if (choice2 === 'sim') {
+            await typeMessage("Que bênção, " + (userData.nome || "meu bem") + "! Para abrirmos essa visão de 90 dias, toque no botão abaixo para gerar o PIX seguro de liberação:");
+            await typeMessage(pixButton(30, "🔮 Ativar Oráculo 90 Dias por R$30", "#4B2E83", "15_btn_oraculo", "oraculo_90"), 1000);
+        } else {
+            await finalDonation();
+        }
+    }
+
+    async function miniPixOffers() {
+        const pkg = packageFromAmount(userData.packageAmount);
+        await typeMessage("Minha querida / Meu querido, quando as cartas se abrem dessa forma, a espiritualidade nos mostra que a energia do amor está viva e em movimento.");
+        await typeMessage("Se você sentir no coração, posso aprofundar qualquer ponto agora: 3 respostas diretas por R$20, ou a opção mais vantajosa com 5 respostas + oráculo do futuro por R$30.");
+
+        trackBlindAnalytics('18_pitch_mini_pix');
+        const choice = await showButtons([
+            { label: "Quero 5 respostas + Oráculo (R$30)", value: "trinta" },
+            { label: "Prefiro 3 respostas (R$20)", value: "vinte", type: "secondary" },
+            { label: "Estou em paz por hoje", value: "nao", type: "secondary" }
+        ]);
+
+        if (choice === 'trinta') {
+            await typeMessage("Excelente escolha! O pacote de R$30 é muito abençoado e traz visão completa.");
+            await typeMessage(pixButton(30, "🔮 Gerar PIX de R$30 (5 Respostas + Oráculo)", "#00a884", "19_btn_extra_30", "oraculo_30"), 1000);
+        } else if (choice === 'vinte') {
+            await typeMessage("Com certeza! O pacote de R$20 vai direto aos pontos que mais precisam de clareza.");
+            await typeMessage(pixButton(20, "🔮 Gerar PIX de R$20 (3 Respostas)", "#005A9C", "20_btn_extra_20", "respostas_extra"), 1000);
+        } else {
+            await typeMessage("Compreendo perfeitamente.");
+        }
+
+        if (!pkg.onlyAmarracao && !pkg.amarracao) {
+            await typeMessage("Se você sente que existe orgulho, frieza ou distância entre vocês, a prática mais firme do Templo é a **Amarração e Firmeza Amorosa de 3 a 7 dias**.");
+            await typeMessage(pixButton(40, "🕯️ Gerar PIX de R$40 para Amarração Amorosa", "#7c2d12", "22_btn_amarracao_40", "amarracao"), 1000);
+        }
+
+        await typeMessage("Vou deixar essas orientações registradas para você. Se sentir o chamado de continuar em outro momento, estarei sempre em oração por você.");
+        isBotTyping = false;
+        inputArea.style.display = 'none';
+    }
+
+    async function premiumSchedulePitch() {
+        await typeMessage("Você também liberou o atendimento premium: **3 sessões completas** com leitura amorosa, oráculo, amarração e leitura da mão por videochamada.");
+        await typeMessage("No momento os horários de hoje já estão preenchidos. Vamos agendar para o próximo dia disponível.");
+        await typeMessage("Qual dia você tem preferência para a primeira sessão?");
+        step = 30; enableInput("Ex: amanhã, segunda-feira..."); saveCache(); isBotTyping = false;
+    }
+
+    async function savePremiumSchedule() {
+        try {
+            localStorage.setItem('templo_luz_agendamento', JSON.stringify({
+                sessionId: userData.sessionId,
+                nome: userData.nome,
+                email: userData.email,
+                ente: userData.ente,
+                packageAmount: userData.packageAmount,
+                packageTitle: userData.packageTitle,
+                day: userData.scheduleDay,
+                hour: userData.scheduleHour,
+                savedAt: new Date().toISOString()
+            }));
+        } catch (error_) { /* ignore */ }
+    }
+
+    async function finalDonation() {
+        await typeMessage("O Templo da Luz Amorosa é sustentado por corações generosos que valorizam essa missão sagrada.");
+        await typeMessage("Você sentiria no coração o desejo de fazer uma pequena contribuição voluntária para fortalecer a nossa chama?");
+        
+        trackBlindAnalytics('16_pitch_doacao');
+        const finalAns = await showButtons([
+            { label: "Sim, posso contribuir com R$15 🙏", value: "quinze" },
+            { label: "Sim, posso contribuir com R$10 🙏", value: "dez" },
+            { label: "Agora não posso", value: "nao", type: "secondary" }
+        ]);
+        if (finalAns === 'quinze') {
+            await typeMessage("Gratidão do fundo do coração! Toque abaixo para gerar o PIX seguro de R$ 15:");
+            await typeMessage(pixButton(15, "🙌 Contribuir com R$ 15 para o Templo", "#005A9C", "17_btn_doacao_15", "doacao"), 1000);
+        } else if (finalAns === 'dez') {
+            await typeMessage("Gratidão do fundo do coração! Toque abaixo para gerar o PIX seguro de R$ 10:");
+            await typeMessage(pixButton(10, "🙌 Contribuir com R$ 10 para o Templo", "#00a884", "17_btn_doacao_10", "doacao"), 1000);
+        } else {
+            await typeMessage("Compreendo perfeitamente. A sua presença e sua oração já são uma bênção para todos nós. 🙏");
+            await resumeFinalDonation();
+        }
+    }
+
+    async function resumeFinalDonation() {
+        await typeMessage("Muito obrigada pela sua presença e carinho! Que Deus ilumine sempre o seu caminho amoroso. 🙏✨");
+        isBotTyping = false;
+        inputArea.style.display = 'none';
+    }
+
+    async function trackBlindAnalytics(stepName) {}
+    function sendPresenceHeartbeat() {}
+    function startPresenceHeartbeat() {}
+
+    async function botStepWelcomeInitial(pkg) {
+        if (userData.nome && userData.nome.trim().length > 1) {
+            await typeMessage(`Olá, **${userData.nome}**! Sou a Milena Medeiros. Que alegria imensa receber você no nosso espaço sagrado. 🙏✨`);
+            await typeMessage(`Recebi com muito carinho a confirmação da liberação para o seu pacote: **${pkg.title}**.`);
+            await typeMessage("Quero que você respire fundo e sinta total paz e acolhimento. As cartas do tarot não julgam a sua história, elas apenas iluminam os caminhos e revelam o que está oculto no coração.");
+            
+            if (userData.ente && userData.ente.trim().length > 1) {
+                await typeMessage(`Sinto uma energia muito forte ligando você e o(a) **${userData.ente}**.`);
+                await typeMessage("Me conte com tranquilidade e do fundo do peito: como está a relação de vocês hoje? Estão juntos, afastados, em silêncio, ou existe a dúvida sobre outra pessoa?");
+                step = 3; enableInput("Conte como está a relação..."); saveCache();
+            } else {
+                await typeMessage("Para colocarmos a sua energia no centro do altar sagrado, me diga com carinho: qual é o nome da pessoa amada que você deseja consultar hoje?");
+                step = 4; enableInput("Nome da pessoa amada..."); saveCache();
+            }
+            return;
+        }
+
+        await typeMessage("Olá, que a paz e a luz divina estejam com você! Sou a Milena Medeiros, taróloga e mentora espiritual. É uma alegria te receber aqui no Templo da Luz Amorosa. 🙏✨");
+        await typeMessage("Recebi a confirmação do seu atendimento com muito respeito: **" + pkg.title + "**.");
+        await typeMessage("Quero que você se sinta em casa, em paz e com o coração acolhido. As cartas trazem clareza para guiar seus passos no amor.");
+        await typeMessage("Para iniciarmos nossa sintonização espiritual com todo carinho, me diga: como posso te chamar?");
+        step = 2; enableInput("Seu nome completo ou primeiro nome..."); saveCache();
+    }
+
+    async function botStepWelcome(stepIndex) {
+        if (stepIndex === 0) {
+            trackBlindAnalytics('1_iniciou');
+            initUserDataFromStorage();
+            const pkg = await hydratePackageFromPurchase();
+            await botStepWelcomeInitial(pkg);
+            return;
+        }
+
+        initUserDataFromStorage();
+        if (stepIndex === 1) {
+            if (userData.nome) {
+                await typeMessage(`Olá novamente, **${userData.nome}**! Estou com o altar aberto para sintonizar a sua energia.`);
+                step = 3; enableInput("Conte como vocês estão hoje..."); saveCache();
+            } else {
+                await typeMessage("Para iniciarmos nossa conexão espiritual com todo respeito, como posso te chamar com carinho?");
+                step = 2; enableInput("Seu nome..."); saveCache();
+            }
+            return;
+        }
+
+        if (stepIndex === 15) {
+            if (userData.nome) {
+                await typeMessage(`Que bênção, **${userData.nome}**! Vamos firmar a sua energia nas cartas agora.`);
+                await typeMessage("Como está o coração de vocês dois hoje? Estão juntos, afastados ou em silêncio?");
+                step = 3; enableInput("Situação de vocês..."); saveCache();
+            } else {
+                await typeMessage("Que bênção! Para eu firmar sua energia no altar sagrado, como posso te chamar com todo carinho?");
+                step = 2; enableInput("Seu nome..."); saveCache();
+            }
+        }
+    }
+
+    async function botStepConsultantInfo(stepIndex, userText) {
+        if (stepIndex === 2) {
+            trackBlindAnalytics('3_pediu_afastamento');
+            userData.nome = userText.trim();
+            await typeMessage(`É um prazer imenso me conectar com você, **${userData.nome}**. Sinta o meu carinho e acolhimento daqui.`);
+            await typeMessage("Agora me conta com calma: como está a situação entre vocês dois hoje? Estão juntos, afastados, passando por um momento de silêncio, ou existe a dúvida sobre uma terceira pessoa?");
+            step = 3; enableInput("Situação de vocês..."); saveCache();
+            return;
+        }
+
+        if (stepIndex === 3) {
+            trackBlindAnalytics('4_pediu_nome_ente');
+            userData.afastamento = userText.trim();
+            if (userData.ente && userData.ente.trim().length > 1) {
+                await typeMessage(`Compreendo profundamente, ${userData.nome}. Sei como a incerteza aperta o peito... Mas as cartas têm uma força enorme para revelar o que está no íntimo do(a) **${userData.ente}**.`);
+                step = 5;
+                isBotTyping = false;
+                runBotSequence(5, '');
+                return;
+            }
+            await typeMessage(`Compreendo com toda a sensibilidade, ${userData.nome}. Sei o quanto essas incertezas machucam o coração...`);
+            await typeMessage("Agora me diga o nome da pessoa amada para eu colocar no centro da mesa e sintonizar as cartas:");
+            step = 4; enableInput("Nome da pessoa amada..."); saveCache();
+            return;
+        }
+
+        if (stepIndex === 4) {
+            trackBlindAnalytics('5_pediu_parentesco');
+            userData.ente = userText.trim();
+            await typeMessage(`Perfeito. O nome do(a) **${userData.ente}** já está consagrado na minha mesa sagrada.`);
+            await typeMessage("Qual é o vínculo de vocês hoje? Ex: namoro, casamento, ficantes, ex-parceiro(a), ou alguém especial que você deseja trazer de volta?");
+            step = 5; enableInput("Vínculo atual de vocês..."); saveCache();
+            return;
+        }
+
+        if (stepIndex === 5) {
+            trackBlindAnalytics('6_pediu_mensagem');
+            if (userText?.trim()) userData.parentesco = userText.trim();
+            const pkg = packageFromAmount(userData.packageAmount);
+            if (pkg.onlyAmarracao) {
+                await typeMessage(`Perfeito, ${userData.nome}. Como você adquiriu a **Amarração Amorosa**, vou preparar a firmeza de aproximação espiritual de 3 a 7 dias para você e o(a) **${userData.ente}**.`);
+                await typeMessage("Me diga de coração: qual é o seu desejo mais sincero para essa relação nos próximos dias?");
+                step = 21; enableInput("Seu desejo para a amarração..."); saveCache(); isBotTyping = false; return;
+            }
+            const limit = userData.questionLimit || packageFromAmount(userData.packageAmount).questions || 5;
+            userData.perguntas = [];
+            userData.respostas = [];
+            await typeMessage(`O campo espiritual agora está totalmente aberto entre você e o(a) **${userData.ente}**.`);
+            await typeMessage(`Você tem direito a **${limit} perguntas diretas** às lâminas sagradas do tarot.`);
+            await typeMessage("Abra o seu coração sem medo: me envie a **1ª pergunta** que mais tem tirado o seu sono sobre essa relação:");
+            step = 20; enableInput("Digite sua 1ª pergunta amorosa..."); saveCache();
+            isBotTyping = false;
+        }
+    }
+
+    async function botStepQuestions(userText) {
+        const limit = userData.questionLimit || packageFromAmount(userData.packageAmount).questions || 5;
+        userData.perguntas = userData.perguntas || [];
+        userData.respostas = userData.respostas || [];
+        userData.perguntas.push(userText);
+        showTyping();
+        const respostasPossiveis = [
+            "As cartas mostram sentimentos ainda vivos, porém com bloqueios e orgulho no momento. Essa energia pede sabedoria e paciência para não atropelar os sinais.",
+            "Vejo que há pensamentos recorrentes e momentos em que a saudade aperta, mas o receio de se machucar cria uma barreira defensiva temporária.",
+            "O campo espiritual revela que as influências externas estão perdendo força e a verdade do vínculo de vocês começará a prevalecer em breve.",
+            "A resposta que surge é de reconciliação possível, desde que haja um espaço de conversa madura e sem mágoas antigas.",
+            "As energias indicam que o destino reserva uma surpresa e um reencontro que trará as respostas que o seu coração tanto procura."
+        ];
+        let resposta = respostasPossiveis[(userData.perguntas.length - 1) % respostasPossiveis.length];
+        await new Promise(r => setTimeout(r, 800));
+        hideTyping();
+        userData.respostas.push(resposta);
+        await typeMessage(`🔮 **Revelação da carta para sua pergunta:**\n\n${resposta}`, 1200);
+        if (userData.perguntas.length < limit) {
+            const next = userData.perguntas.length + 1;
+            await typeMessage(`Sinto a energia se abrindo com muita verdade. Envie agora a sua **${next}ª pergunta** (pergunta ${next} de ${limit}):`);
+            step = 20; enableInput(`Digite sua ${next}ª pergunta...`); saveCache(); isBotTyping = false; return;
+        }
+        await typeMessage(`Concluímos suas perguntas diretas com muita bênção e luz, ${userData.nome}.`);
+        await typeMessage(`Agora estou abrindo a grande **Leitura Central do Amor** para enxergar o destino e o laço entre você e o(a) **${userData.ente}**.`);
+        userData.mensagem = (userData.perguntas || []).join(' | ');
+        inputArea.style.display = 'none'; saveCache();
+        userData.deliverTime = Date.now() + (35 * 1000);
+        userData.fakedTimer = 0;
+        step = 7; saveCache(); startLetterTimer(); isBotTyping = false;
+    }
+
+    async function botStepAmarracaoAndSchedule(stepIndex, userText) {
+        if (stepIndex === 21) {
+            userData.mensagem = userText;
+            inputArea.style.display = 'none'; saveCache();
+            await typeMessage("Recebi com todo respeito. A energia entre vocês mostra laço espiritual e sentimentos que não morreram, mas há orgulho e mágoas que precisam ser desfeitas com calma e oração.");
+            await typeMessage("Aqui estão os **3 passos do amor** para a amarração de 3 a 7 dias:\n\n1. **Limpeza do medo:** hoje, antes de dormir, respire fundo por 7 vezes e solte a ansiedade. Não chame essa pessoa pela carência, chame pela lembrança boa e pelo respeito.\n\n2. **Chamada do pensamento:** pense no rosto de " + userData.ente + " e repita o nome da pessoa 3 vezes, mentalizando paz, aproximação e conversa sincera.\n\n3. **Firmeza de aproximação:** por 3 a 7 dias, evite cobranças ou indiretas. Observe sinais, sonhos e mudanças sutis. A espiritualidade precisa de tranquilidade para agir.");
+            await typeMessage("Minha orientação de coração: confie no processo e mantenha a sua vibração elevada. Faça com fé.");
+            trackBlindAnalytics('10_entrega_amarracao_40');
+            await miniPixOffers();
+            return;
+        }
+        if (stepIndex === 30) {
+            userData.scheduleDay = userText;
+            await typeMessage("Perfeito. Para esse dia eu vou verificar o encaixe da primeira sessão premium.");
+            await typeMessage("Agora me diga qual horário fica melhor para você. Pode mandar uma faixa, por exemplo: 14h, depois das 18h, ou entre 20h e 21h.");
+            step = 31; enableInput("Horário disponível..."); saveCache(); isBotTyping = false; return;
+        }
+        if (stepIndex === 31) {
+            userData.scheduleHour = userText;
+            await savePremiumSchedule();
+            await typeMessage("Combinado. Anotei sua preferência para **" + userData.scheduleDay + " às " + userData.scheduleHour + "**.");
+            await typeMessage("A primeira sessão será a leitura da mão por videochamada e abertura do campo amoroso. Depois disso, nas outras 2 sessões, você escolhe comigo se quer aprofundar amarração, retorno, terceira pessoa ou próximos passos.");
+            await typeMessage("Vou deixar esse registro salvo no sistema do atendimento. Fique atenta ao WhatsApp informado na compra para a confirmação do encaixe.");
+            await miniPixOffers();
+        }
+    }
+
+    async function botStepLetterAndOraculo(stepIndex, userText) {
+        if (stepIndex === 6) {
+            trackBlindAnalytics('7_ofereceu_fura_fila');
+            userData.mensagem = userText;
+            inputArea.style.display = 'none'; saveCache();
+            await typeMessage("Entendi, " + userData.nome + ". A sua energia está muito presa nessa pessoa, e isso precisa ser visto com seriedade agora.");
+            await typeMessage(`Perfeito. Estou sintonizando a minha energia com a luz do(a) ${userData.ente} neste exato momento...`);
+            await typeMessage("Vou abrir sua leitura agora, sem fila. Aguarde enquanto eu puxo as cartas principais do amor.");
+            userData.deliverTime = Date.now() + (1 * 60000); userData.fakedTimer = 0;
+            step = 7; saveCache(); startLetterTimer(); isBotTyping = false;
+            return;
+        }
+        if (stepIndex === 8) {
+            userData.mensagem_upsell = userText;
+            inputArea.style.display = 'none';
+            saveCache();
+            
+            await typeMessage("Transmitindo as suas palavras para o campo amoroso neste exato momento... ✨");
+            showTyping();
+            
+            let respostaContent = "Senti uma energia de profunda paz descendo sobre a sua intenção... O(a) " + (userData.ente || 'pessoa amada') + " acolheu suas vibrações no plano espiritual e um laço de serenidade começou a se restabelecer.";
+            await new Promise(r => setTimeout(r, 1000));
+            hideTyping();
+            
+            await typeMessage(`Pronto! O(a) ${userData.ente} ouviu você e conseguiu me passar essa resposta agora mesmo:`);
+            await typeMessage(respostaContent);
+            await typeMessage("Agradeço de coração por me permitir ser a ponte de luz entre vocês. 🙏");
+            
+            await novaCartaPitch();
+            return;
+        }
+        if (stepIndex === 9) {
+            userData.oraculo_amor = userText;
+            await typeMessage("Certo, captei esse medo. Agora me diga: o que você mais deseja que aconteça entre vocês nos próximos dias?", 3500);
+            step = 10; enableInput("Seu desejo para a relação..."); saveCache(); isBotTyping = false;
+            return;
+        }
+        if (stepIndex === 10) {
+            userData.oraculo_financas = userText;
+            await typeMessage("Entendi. Por último, qual sinal você mais precisa entender: afastamento, frieza, outra pessoa, silêncio, ciúme ou volta?", 3500);
+            step = 11; enableInput("Sinal principal..."); saveCache(); isBotTyping = false;
+            return;
+        }
+        if (stepIndex === 11) {
+            userData.oraculo_familia = userText;
+            inputArea.style.display = 'none'; saveCache();
+
+            await typeMessage("Gratidão. Estou abrindo o seu campo amoroso agora. Aguarde um instante enquanto o oráculo dos seus próximos " + (userData.oraculoDays || 90) + " dias é revelado para você...", 4000);
+            showTyping();
+            
+            let oraculoContent = await fetchOraculo();
+            hideTyping();
+            
+            await typeMessage(oraculoContent, 1000);
+            if (userData.hasAmarracao) {
+                await typeMessage("Como o seu pacote inclui a amarração amorosa de 3 a 7 dias, vou deixar também os 3 passos do amor para você iniciar hoje com firmeza e respeito espiritual.");
+                await typeMessage("1. **Limpeza do medo:** antes de dormir, respire fundo por 7 vezes e diga mentalmente: eu solto a ansiedade e permito que a verdade apareça.\n\n2. **Chamada do pensamento:** pense no rosto de " + userData.ente + " por alguns segundos e repita o nome da pessoa com calma, sem raiva, pedindo aproximação com clareza.\n\n3. **Firmeza de aproximação:** pelos próximos 3 a 7 dias, evite cobrança direta. Observe sinais, sonhos, mensagens indiretas e mudanças de comportamento. A energia precisa de silêncio para se mover.");
+            }
+            if (userData.hasVideochamada) {
+                await premiumSchedulePitch();
+                return;
+            }
+            await miniPixOffers();
+        }
+    }
+
+    async function runBotSequence(stepIndex, userText) {
+        isBotTyping = true;
+        disableInput();
+        
+        if (stepIndex === 0 || stepIndex === 1 || stepIndex === 15) {
+            await botStepWelcome(stepIndex);
+        } else if (stepIndex >= 2 && stepIndex <= 5) {
+            await botStepConsultantInfo(stepIndex, userText);
+        } else if (stepIndex === 20) {
+            await botStepQuestions(userText);
+        } else if (stepIndex === 21 || stepIndex === 30 || stepIndex === 31) {
+            await botStepAmarracaoAndSchedule(stepIndex, userText);
+        } else {
+            await botStepLetterAndOraculo(stepIndex, userText);
+        }
+        
+        if (stepIndex !== 6 && stepIndex !== 7 && stepIndex !== 8 && stepIndex !== 9 && stepIndex !== 10 && stepIndex !== 11) {
+            isBotTyping = false;
+        }
+    }
+
+    function sendMessage() {
+        if (isBotTyping) return;
+        const text = messageInput.value.trim();
+        if (text === '') return;
+        addMessage(text, 'sent');
+        messageInput.value = '';
+        disableInput();
+        runBotSequence(step, text);
+    }
+
+    function handleKeyPress(e) { if (e.key === 'Enter') sendMessage(); }
+
+    window.onload = () => {
+        if (!loadCache()) {
+            setTimeout(() => { runBotSequence(0, ''); }, 800);
+        }
+        startPresenceHeartbeat();
+    };
+
+
+
+
+
+
+
+</script>
+<script src="../analytics/tracker.js?v=20260911"></script></body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
